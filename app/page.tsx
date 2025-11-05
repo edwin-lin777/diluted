@@ -1,6 +1,8 @@
+
+
 const page = () => {
   return (
-    <div className="underline text-5xl ">Welcome to diluted</div>
+    <div className="underline text-5xl ">Welcome to Ryan</div>
   )
 }
 
