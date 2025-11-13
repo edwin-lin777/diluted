@@ -1,10 +1,4 @@
 import Link from "next/link";
-import { Cal_Sans } from "next/font/google";
-
-const cal = Cal_Sans({
-  weight: '400',
-})
-
 export default function Navbar() {
   return (
     <div className="navbar bg-base-100 shadow-sm flex  justify-left fixed top-0 z-100">
