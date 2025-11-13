@@ -1,15 +1,18 @@
 
 import Navbar from "@/components/Navbar";
-import DiscoverPage from "@/components/DiscoverPage";
+import TiktokCompoent from "@/components/TiktokComponent";
 const Discover = () => {
   return (
     <>
       <div className="mt-25">
         <Navbar />
       </div>
-      <DiscoverPage name="tst"/>
+      <TiktokCompoent/> 
     </>
   );
 };
 
 export default Discover;
+
+
+
