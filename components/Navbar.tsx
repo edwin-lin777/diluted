@@ -1,20 +1,32 @@
 import Link from "next/link";
 export default function Navbar() {
   return (
-    <div className="navbar bg-base-100 shadow-sm flex  justify-left fixed top-0 z-100">
-      <ul className="flex gap-35 ml-15">
-        <li className="btn btn-ghost text-xl">Diluted</li>
-        <li>
-          <Link href="/" className="btn btn-ghost text-xl">
-            Leaderboards
-          </Link>
-        </li>
-        <li>
-          <Link href="/discover" className="btn btn-ghost text-xl">
-            Discover
-          </Link>
-        </li>
-      </ul>
+      <div className="navbar flex shadow-xs justify-left fixed top-10 z-100">
+        <div className='flex-col flex'>
+
+          <ul className="translate-y-[-40px] flex ml-15">
+            <li className = "cal-sans-regular btn btn-ghost text-3xl">
+            Diluted
+
+            </li>
+              <li>
+                <Link href="/" className="btn btn-ghost roboto-flex-class font-medium">
+                  Leaderboards
+                </Link>
+              </li>
+              <li>
+                <Link href="/discover" className="btn btn-ghost roboto-flex-class font-medium">
+                  Discover
+                </Link>
+              </li>
+          </ul>     
+        <div className='fixed ml-21 py-3'>
+          <ul className='flex gap-7'>
+            <li className='text-gray-400 hover:text-black transition-colors'><Link href='' className=''>Trending</Link></li>
+            <li className='text-gray-400 hover:text-black transition-colors'><Link href='' className=''>For You</Link></li>
+          </ul>
+        </div> 
+      </div>
     </div>
   );
 }
