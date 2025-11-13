@@ -1,11 +1,15 @@
-import React from 'react'
-import Navbar from '@/components/Navbar'
+
+import Navbar from "@/components/Navbar";
+import DiscoverPage from "@/components/DiscoverPage";
 const Discover = () => {
   return (
-    <div>Discover Page
-        <Navbar/>
-    </div>
-  )
-}
+    <>
+      <div className="mt-25">
+        <Navbar />
+      </div>
+      <DiscoverPage name="tst"/>
+    </>
+  );
+};
 
-export default Discover
+export default Discover;
