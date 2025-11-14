@@ -8,7 +8,7 @@ const Discover = () => {
         <Navbar />
       </div>
       <DiscoverPage name="tst"/>
-    </>
+    </>\
   );
 };
 
