@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 
-const DiscoverPage = ({ image, description, name }) => {
+const DiscoverPage = ({ image, description, name }: CompanyProps) => {
   const [long, setLonged] = useState(false);
   const [short, setShorted] = useState(false);
   const [neutral, setNeutral] = useState(false);
