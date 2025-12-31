@@ -7,13 +7,18 @@ const cal = Cal_Sans({
 
 export default function Navbar() {
   return (
-    <div className="navbar flex shadow-xs justify-left fixed top-10 z-100">
+    <div className="navbar flex shadow-xs justify-left absoutle fixed top-10 z-100">
       <div className="flex-col flex">
         <ul className="translate-y-[-40px] flex ml-15">
-          <li className="cal-sans-regular btn btn-ghost text-3xl">Diluted</li>
+          <li>
+            <Link href="/" className="cal-sans-regular btn btn-ghost text-3xl">
+              Diluted
+            </Link>
+          </li>
+
           <li>
             <Link
-              href="/"
+              href="/leaderboard"
               className="btn btn-ghost roboto-flex-class font-medium"
             >
               Leaderboards
