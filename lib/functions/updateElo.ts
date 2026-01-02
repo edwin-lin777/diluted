@@ -1,33 +1,37 @@
-import { connectToDatabase } from "@/database/mongoose"
+import Company from "@/database/Company";
+import { connectToDatabase } from "@/database/mongoose";
 
+export const updateElo = async ({ CompanyProps, longOrShort }: UpdateElo) => {
+  await connectToDatabase();
+  const companyId = CompanyProps._id;
+  const elo = CompanyProps.elo;
+  const rOpponent = 1000;
+  const K = 32;
+  const E = 1 / (1 + Math.pow(10, (rOpponent - elo) / 400));
 
-
-
-export const updateElo = async ({company, longOrShort}: CompanyProps) => {
-    await connectToDatabase
-    const longs = company.longs;
-    const companyID = company.id;
-    const shorts = company.shorts;
-    const elo = company.elo;
-    const rOpponent = 1000;
-    const K = 32;
-    const E = 1/ (1+ 10^((rOpponent-elo)/400))
-
-    if (longOrShort){
-        const newElo = elo + (K*(1-E));
-        update.$inc.longs = 1;
-        
-        const UpdatedCompany = await company.findByIdAndUpdate(
-            companyID,
-            update,
-            {new: true}
-        )
-    } else {
-        const newElo = elo + (K*(-E));
-    }
-
-    
-
-
-
-}
+  const updateFactorLong = K * (1 - E);
+  const updateFactorShort = K * (0 - E);
+  if (longOrShort) {
+    return await Company.findByIdAndUpdate(
+      companyId,
+      {
+        $inc: {
+          longs: 1,
+          elo: Math.round(updateFactorLong),
+        },
+      },
+      { new: true }
+    );
+  } else {
+    return await Company.findByIdAndUpdate(
+      companyId,
+      {
+        $inc: {
+          shorts: 1,
+          elo: Math.round(updateFactorShort),
+        },
+      },
+      { new: true }
+    );
+  }
+};

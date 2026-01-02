@@ -3,6 +3,7 @@ type CompanyProps = {
     name?: string,
     image?: string,
     description?: string,
+    country?: string,
     long?: number,
     short?: number,
     elo?: number,
@@ -15,7 +16,7 @@ type AccountProps = {
 }
 
 type UpdateElo = {
-    company: companyProps,
+    CompanyProps,
     longOrShort: boolean,
 }
 
