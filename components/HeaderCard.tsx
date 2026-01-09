@@ -7,7 +7,7 @@ const HeaderCard = () => {
         <div className='flex justify-center flex-col items-center'>
 
             <h1 className='font-bold text-2xl'>Have you ever wanted to short or long a private company?</h1>
-            <h1>Long or short a private company</h1>
+            <h1>Cast your vote to see which companies are the most bullish or bearish!</h1>
         </div>
       
     </Card>

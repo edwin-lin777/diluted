@@ -1,27 +1,29 @@
 import Link from "next/link";
-import { Cal_Sans } from "next/font/google";
 import { CompanySearch } from "@/components/CompanySearch";
-import Company from "@/database/Company";
-
-
-const cal = Cal_Sans({
-  weight: "400",
-});
+import Company from "@/app/models/Company";
+import logo from '../public/Diluted-Logo.png'
+import Image from "next/image";
 
 export default function Navbar() {
   return (
-    <div className="navbar flex shadow-xs justify-left bg-white absolute z-100 justify-between">
+    <div className="navbar flex shadow-xs justify-left bg-white absolute z-100 justify-between px-20">
       <div className="flex-col flex">
         <ul className="flex ">
-          <li>
-            <Link href="/" className="cal-sans-regular ml-20 text-3xl">
-              Diluted
-            </Link>
-          </li>
+          <Link href='/' className=''>
+           <div className="relative w-[150px] h-11 overflow-hidden shrink-0">
+    <Image
+      src={logo}
+      alt="Diluted"
+      fill
+      className="object-cover object-center"
+      priority
+    />
+  </div>
+          </Link>
 
           <li>
             <Link
-              href="/leaderboard"
+              href="/explore"
               className="btn btn-ghost roboto-flex-class font-medium"
             >
               Explore
@@ -56,7 +58,7 @@ export default function Navbar() {
               href="/discover"
               className="btn btn-ghost roboto-flex-class font-medium"
             >
-              Goods
+              Ideas
             </Link>
           </li>
         </ul>
