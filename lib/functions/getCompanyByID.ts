@@ -1,5 +1,4 @@
-import { connectToDatabase } from "@/database/mongoose";
-import Company from "@/database/Company";
+import Company from "@/app/models/Company";
 
 export const getCompanyByID = async (id: string) => {
 
